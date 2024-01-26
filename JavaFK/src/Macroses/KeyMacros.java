@@ -16,17 +16,40 @@ public class KeyMacros {
 
     //----------------------------------------------------------------
 
-    private void set_combination(KeyEvent event){ // создание комбинации
-        while(true){
 
-        }
+
+    public KeyMacros (){
+        combination = new ArrayList<Buttonchik>();
+    };
+
+    private void set_combination(ArrayList<Buttonchik> combination){ // создание комбинации
+        this.combination = combination;
     }
 
-    public KeyMacros(KeyEvent event){
-        set_combination(event);
+    public void add_button(Buttonchik knopka){
+        combination.add(knopka);
+    }
+
+    public void add_key(KeyCode key){
+        this.key = key;
+    }
+
+    public void add_key(String key){
+        this.key = KeyCode.getKeyCode(key);
     }
 
     public ArrayList<Buttonchik> get_combination(){
         return combination;
+    }
+
+    @Override
+    public String toString() {
+        String S = "Комбинация: ";
+        for (Buttonchik i: combination){
+            S += i + " , ";
+        }
+        S += '\n';
+        S += key;
+        return S;
     }
 }

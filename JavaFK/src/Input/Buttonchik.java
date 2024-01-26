@@ -17,4 +17,27 @@ public class Buttonchik {
         this.period = period;
         this.delay = delay;
     }
+
+    public KeyCode getType() {
+        return type;
+    }
+
+
+
+    public int getPeriod() {
+        return period;
+    }
+
+    public int getDelay() {
+        return delay;
+    }
+
+    @Override
+    public String toString() {
+        return "Buttonchik{" +
+                "type=" + type +
+                ", period=" + period +
+                ", delay=" + delay +
+                '}';
+    }
 }
