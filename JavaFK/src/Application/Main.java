@@ -8,45 +8,23 @@ import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.scene.text.Text;
 import java.util.List;
+import java.util.Scanner;
 
-public class Main extends Application{
+public class Main  {
 
     public static void main(String[] args) {
 
-        System.out.println("Launching Application");
-        launch(args);
-    }
+        System.out.printf("Введите макрос (клавиша1 задержка1 клавиша2): ");
+        Scanner input = new Scanner(System.in);
 
-    @Override
-    public void init() throws Exception {
+        String s = input.nextLine();
+        System.out.println(s);
 
-        System.out.println("Application inits");
-        super.init();
-    }
-    @Override
-    public void start(Stage stage) {
+        for(String i: s.split(" ")){
 
-        System.out.println("Application starts");
 
-        // получаем переданные параметры
-        Application.Parameters params = getParameters();
-        List<String> unnamedParams = getParameters().getUnnamed();
-        int i =0;
-        for(String param: unnamedParams){
-            i++;
-            System.out.printf("%d - %s \n", i, param);
+            Buttonchik button = new Buttonchik()
         }
 
-        stage.show();
     }
-    @Override
-    public void stop() throws Exception {
-
-        System.out.println("Application stops");
-        super.stop();
-    }
-
-
-
-
 }

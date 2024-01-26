@@ -11,4 +11,10 @@ public class Buttonchik {
 
     //---------------------------------------------------------------------
 
+
+    public Buttonchik(KeyCode type, int period, int delay) {
+        this.type = type;
+        this.period = period;
+        this.delay = delay;
+    }
 }
