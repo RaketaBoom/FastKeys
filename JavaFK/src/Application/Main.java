@@ -1,5 +1,7 @@
 package Application;
 
+import Input.Buttonchik;
+import Macroses.KeyMacros;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -43,4 +45,8 @@ public class Main extends Application{
         System.out.println("Application stops");
         super.stop();
     }
+
+
+
+
 }

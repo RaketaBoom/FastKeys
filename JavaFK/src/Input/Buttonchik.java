@@ -3,13 +3,12 @@ package Input;
 import javafx.scene.input.KeyCode;
 
 public class Buttonchik {
-    private KeyCode type; // Тип нажатой клавиши, учитываются даже спец. клавиши и ненажатие
+    private KeyCode type; // Тип нажатой клавиши
 
-    private long period; // Время нажатия
+    private int period; // Время нажатия
 
-    public Buttonchik(KeyCode type, long period){
-        this.type = type;
-        this.period = period;
-    }
+    private int delay; // Задержка после нажатия
+
+    //---------------------------------------------------------------------
 
 }
