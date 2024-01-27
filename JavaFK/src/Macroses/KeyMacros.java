@@ -42,6 +42,10 @@ public class KeyMacros {
         return combination;
     }
 
+    public KeyCode getKey() {
+        return key;
+    }
+
     @Override
     public String toString() {
         String S = "Комбинация: ";
