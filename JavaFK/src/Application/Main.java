@@ -13,25 +13,41 @@ import java.util.Scanner;
 
 public class Main  {
 
-    private static final int delay = 250;
+    private static final int period = 250;
 
     public static void main(String[] args) {
 
         KeyMacros mac1 = new KeyMacros();
 
-        System.out.printf("Введите макрос (клавиша1-задержка1 клавиша2-задержка2): ");
+        System.out.printf("Введите макрос (клавиша1 задержка1 клавиша2): ");
         Scanner input = new Scanner(System.in);
 
         String s = input.nextLine();
-        System.out.println(s);
 
+
+
+        // Задание макроса
+        Buttonchik button = new Buttonchik();
+        boolean is_button = true;
         for(String i: s.split(" ")){
-            String[] tmp = i.split("-");
-            Buttonchik button = new Buttonchik(KeyCode.getKeyCode(tmp[0]), Integer.parseInt(tmp[1]), delay);
-            mac1.add_button(button);
+            if(is_button){
+                button = new Buttonchik(KeyCode.getKeyCode(i), period, 0);
+                button.setType(KeyCode.getKeyCode(i));
+                mac1.add_button(button);
+                is_button = false;
+            }else{
+                button.setDelay(Integer.parseInt(i));
+                is_button = true;
+            }
         }
 
+        System.out.print("Назначьте клавишу активации макроса: ");
+        s = input.next();
+        mac1.add_key(s);
+
         System.out.println(mac1);
+
+        System.out.println("Макрос успешно создан");
 
 
     }

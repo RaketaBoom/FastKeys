@@ -12,6 +12,13 @@ public class Buttonchik {
     //---------------------------------------------------------------------
 
 
+    public Buttonchik(){}
+
+    public Buttonchik(int period, int delay){
+        this.period = period;
+        this.delay = delay;
+    }
+
     public Buttonchik(KeyCode type, int period, int delay) {
         this.type = type;
         this.period = period;
@@ -30,6 +37,18 @@ public class Buttonchik {
 
     public int getDelay() {
         return delay;
+    }
+
+    public void setType(KeyCode type) {
+        this.type = type;
+    }
+
+    public void setPeriod(int period) {
+        this.period = period;
+    }
+
+    public void setDelay(int delay) {
+        this.delay = delay;
     }
 
     @Override
